@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shop | Goodwill Gift House{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- SHOP HEADER -->
+<section class="shop-header">
+    <h1>Our Products</h1>
+    <p>Carefully crafted gifts & momentos</p>
+</section>
+
+<!-- SEARCH -->
+<form method="get" class="product-search">
+    <input
+        type="text"
+        name="q"
+        placeholder="Search products..."
+        value="{{ request.GET.q|default:'' }}"
+    >
+    <button type="submit">Search</button>
+</form>
+
+<!-- CATEGORIES -->
+<div class="category-bar">
+    <a href="{% url 'product_list' %}" class="category-pill {% if not selected_category %}active{% endif %}">
+        All
+    </a>
+
+    {% for category in categories %}
+        <a href="?category={{ category.slug }}"
+           class="category-pill {% if selected_category == category.slug %}active{% endif %}">
+            {{ category.name }}
+        </a>
+    {% endfor %}
+</div>
+
+<!-- PRODUCTS -->
+<section class="product-grid">
+    {% for product in products %}
+    <div class="product-card">
+
+        <span class="badge badge-new">New</span>
+
+        <div class="product-image">
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        </div>
+
+        <div class="product-info">
+            <h3 class="product-name">{{ product.name }}</h3>
+            <p class="product-price">₹{{ product.price }}</p>
+
+            <a href="{% url 'product_detail' product.id %}" class="btn-view">
+                View Details
+            </a>
+        </div>
+
+    </div>
+    {% empty %}
+        <p class="no-products">No products found.</p>
+    {% endfor %}
+</section>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% load static %}
+
+
+<aside class="col-lg-2 sidebar">
+    <img src="{% static 'goodwill-logo.png' %}" class="sidebar-logo">
+
+    <a href="{% url 'admin_dashboard' %}"
+       class="nav-link {% if active == 'dashboard' %}active{% endif %}">
+        <i class="bi bi-speedometer2 me-2"></i> Dashboard
+    </a>
+
+    <a href="{% url 'admin_products' %}"
+       class="nav-link {% if active == 'products' %}active{% endif %}">
+        <i class="bi bi-box-seam me-2"></i> Products
+    </a>
+
+    <a href="{% url 'admin_categories' %}"
+       class="nav-link {% if active == 'categories' %}active{% endif %}">
+        <i class="bi bi-layers me-2"></i> Categories
+    </a>
+
+    <a href="{% url 'admin_orders' %}"
+       class="nav-link {% if active == 'orders' %}active{% endif %}">
+        <i class="bi bi-cart-check me-2"></i> Orders
+    </a>
+
+    <a href="{% url 'admin_list' %}"
+       class="nav-link {% if active == 'admins' %}active{% endif %}">
+        <i class="bi bi-people me-2"></i> Admins
+    </a>
+
+
+    <a href="{% url 'admin_logout' %}" class="nav-link">
+        <i class="bi bi-power me-2"></i> Logout
+    </a>
+</aside>
+

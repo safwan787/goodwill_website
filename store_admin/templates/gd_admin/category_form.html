@@ -1,0 +1,83 @@
+{% extends "gd_admin/base.html" %}
+{% load static %}
+{% block title %}{{ title }}{% endblock %}
+{% block body_class %}dashboard-body{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+
+    {% include "gd_admin/sidebar.html" %}
+
+    <main class="col-lg-10 main-content">
+
+      <h1 class="page-title">{{ title }}</h1>
+
+      <div class="glass-card">
+
+        <form method="post">
+          {% csrf_token %}
+
+          <div class="row g-4">
+
+            <!-- CATEGORY NAME -->
+            <div class="col-md-6">
+              <label class="form-label">Category Name</label>
+              {{ form.name }}
+            </div>
+
+            <!-- DESCRIPTION (AI INTEGRATED) -->
+            <div class="col-12">
+              <div class="d-flex align-items-center gap-2 mb-1">
+                <label class="form-label mb-0">Description</label>
+
+                <button
+                  type="button"
+                  id="ai-generate-category"
+                  class="btn btn-sm btn-outline-gold"
+                >
+                 ✨ Generate with AI
+                </button>
+                <small class="text-muted" style="font-size: 12px;">
+                  ℹ️ Local AI in use. Cloud AI will be enabled in production.
+                </small>
+              </div>
+
+              <small
+                id="ai-category-error"
+                class="text-danger"
+                style="display:none;"
+              ></small>
+
+              {{ form.description }}
+
+              <small class="text-muted">
+                You can edit the AI-generated description before saving.
+              </small>
+            </div>
+
+          </div>
+
+          <!-- ACTIONS -->
+          <div class="mt-4 d-flex gap-2">
+            <button class="btn btn-gold" type="submit">
+              <i class="bi bi-save me-2"></i> Save Category
+            </button>
+
+            <a href="{% url 'admin_categories' %}" class="btn btn-outline-light">
+              Cancel
+            </a>
+          </div>
+
+        </form>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+
+<!-- AI SCRIPT -->
+<script src="{% static 'js/ai.js' %}"></script>
+
+{% endblock %}

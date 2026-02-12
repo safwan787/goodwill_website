@@ -1,0 +1,74 @@
+{% extends "gd_admin/base.html" %}
+{% load static %}
+{% block title %}Admin Dashboard{% endblock %}
+{% block body_class %}dashboard-body{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+
+    {% include "gd_admin/sidebar.html" %}
+
+    <main class="col-lg-10 main-content">
+      <h1 class="page-title">Dashboard Overview</h1>
+
+      <div class="row">
+
+        <!-- PRODUCTS -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <a href="{% url 'admin_products' %}" class="stat-link">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="bi bi-box-seam"></i></div>
+              <div class="stat-label">Products</div>
+              <div class="stat-value">{{ product_count }}</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- CATEGORIES -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <a href="{% url 'admin_categories' %}" class="stat-link">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="bi bi-layers"></i></div>
+              <div class="stat-label">Categories</div>
+              <div class="stat-value">{{ category_count }}</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- ORDERS -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <a href="{% url 'admin_orders' %}" class="stat-link">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="bi bi-cart-check"></i></div>
+              <div class="stat-label">Orders</div>
+              <div class="stat-value">{{ order_count }}</div>
+            </div>
+          </a>
+        </div>
+
+        <!-- ADMINS -->
+        <div class="col-lg-3 col-md-6 mb-4">
+          <a href="{% url 'admin_list' %}" class="stat-link">
+            <div class="stat-card">
+              <div class="stat-icon"><i class="bi bi-people"></i></div>
+              <div class="stat-label">Admins</div>
+              <div class="stat-value">{{ admin_count }}</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="welcome-card">
+        <h4>Welcome to GOODWILL Admin Panel</h4>
+        <p>
+          Manage gifts, mementos, trophies, stationery products,
+          orders and administrators.
+        </p>
+      </div>
+
+    </main>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,77 @@
+.inquiry-page {
+    margin-top: 40px;
+    margin-bottom: 80px;
+}
+
+/* PRODUCT CARD */
+.product-summary {
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.product-summary img {
+    width: 100%;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.product-summary h5 {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.price {
+    font-weight: 600;
+    color: #198754;
+}
+
+/* FORM */
+.inquiry-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.inquiry-form label {
+    font-weight: 500;
+    margin-bottom: 6px;
+}
+
+.inquiry-form input,
+.inquiry-form textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.inquiry-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus {
+    outline: none;
+    border-color: #000;
+}
+
+/* BUTTON */
+.btn-submit {
+    background: #000;
+    color: #fff;
+    padding: 12px 28px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: 0.2s ease;
+}
+
+.btn-submit:hover {
+    background: #222;
+}

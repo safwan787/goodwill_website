@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block title %}My Orders | Goodwill Gift House{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-header">
+    <h1>My Orders</h1>
+    <p>Track and review your orders</p>
+</section>
+
+{% if orders %}
+<div class="order-list">
+    {% for order in orders %}
+    <div class="order-card">
+
+        <div class="order-top">
+            <div>
+                <strong>Order #{{ order.id }}</strong>
+                <span class="order-date">
+                    {{ order.created_at|date:"d M Y" }}
+                </span>
+            </div>
+
+            <span class="order-status {{ order.status }}">
+                {{ order.status|capfirst }}
+            </span>
+        </div>
+
+        <div class="order-address">
+            <strong>Delivery Address:</strong><br>
+            {{ order.address|linebreaksbr }}
+        </div>
+
+        <div class="order-items">
+            <strong>Items:</strong>
+            <ul>
+                {% for item in order.items.all %}
+                <li>
+                    {{ item.product.name }} × {{ item.quantity }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p class="text-muted">
+    You haven’t placed any orders yet.
+</p>
+{% endif %}
+
+<a href="{% url 'dashboard' %}" class="btn btn-outline-dark mt-4">
+    ← Back to Dashboard
+</a>
+
+{% endblock %}

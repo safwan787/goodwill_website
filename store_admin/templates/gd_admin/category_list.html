@@ -1,0 +1,95 @@
+{% extends "gd_admin/base.html" %}
+{% load static %}
+
+{% block title %}Categories{% endblock %}
+{% block body_class %}dashboard-body{% endblock %}
+
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+
+    <!-- SIDEBAR -->
+    {% include "gd_admin/sidebar.html" %}
+
+    <!-- MAIN CONTENT -->
+    <main class="col-lg-10 main-content">
+
+      <!-- PAGE HEADER -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="page-title mb-0">Categories</h1>
+
+        <!-- ADD CATEGORY BUTTON -->
+        <a href="{% url 'admin_category_add' %}" class="btn btn-gold">
+          <i class="bi bi-plus-lg me-2"></i>
+          Add Category
+        </a>
+      </div>
+
+      <!-- CATEGORIES TABLE -->
+      <div class="glass-card">
+
+        <div class="table-responsive">
+          <table class="table table-dark table-hover align-middle mb-0">
+
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+                <th style="width: 160px;" class="text-end">Actions</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {% for category in categories %}
+              <tr>
+
+                <!-- NAME -->
+                <td class="fw-semibold">
+                  {{ category.name }}
+                </td>
+
+                <!-- DESCRIPTION -->
+                <td class="text-muted">
+                  {{ category.description|default:"—" }}
+                </td>
+
+                <!-- ACTIONS -->
+                <td class="text-end">
+
+                  <!-- EDIT -->
+                  <a href="{% url 'admin_category_edit' category.id %}"
+                     class="btn btn-sm btn-outline-warning me-1"
+                     title="Edit">
+                    <i class="bi bi-pencil"></i>
+                  </a>
+
+                  <!-- DELETE -->
+                  <a href="{% url 'admin_category_delete' category.id %}"
+                     class="btn btn-sm btn-outline-danger"
+                     title="Delete"
+                     onclick="return confirm('Delete this category?');">
+                    <i class="bi bi-trash"></i>
+                  </a>
+
+                </td>
+
+              </tr>
+              {% empty %}
+              <tr>
+                <td colspan="3" class="text-center text-muted py-5">
+                  <i class="bi bi-layers fs-1 d-block mb-2"></i>
+                  No categories added yet
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+
+          </table>
+        </div>
+
+      </div>
+
+    </main>
+  </div>
+</div>
+{% endblock %}

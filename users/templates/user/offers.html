@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Offers | Goodwill Gift House{% endblock %}
+
+{% block content %}
+
+<section class="text-center py-5">
+    <h1 class="mb-3">Current Offers</h1>
+    <p class="text-muted mb-4">
+        There are no active offers at the moment.
+    </p>
+
+    <p>
+        🎁 Please check back soon — exciting offers and discounts are coming!
+    </p>
+
+    <a href="{% url 'product_list' %}" class="btn btn-dark mt-4">
+        Browse Products
+    </a>
+</section>
+
+{% endblock %}

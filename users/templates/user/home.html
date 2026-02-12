@@ -1,0 +1,131 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Goodwill Gift House{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- ================= HOME SLIDER ================= -->
+<section class="home-slider">
+
+    <div class="slider-wrapper">
+
+        <div class="slides">
+
+            <!-- SLIDE 1 -->
+            <div class="slide slide-1" id="s1">
+                <div class="slide-content">
+                    <h2>Beautiful Gifts for Every Occasion</h2>
+                    <p>Frames · Momentos · Customized Gifts · Stationery</p>
+                    <a href="{% url 'product_list' %}" class="btn btn-dark">
+                        Shop Now
+                    </a>
+                </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="slide slide-2" id="s2">
+                <div class="slide-content">
+                    <h2>Exciting Offers Coming Soon</h2>
+                    <p>Festive deals · Combo offers · Special discounts</p>
+                    <a href="{% url 'offers' %}" class="btn btn-dark">
+                        View Offers
+                    </a>
+                </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="slide slide-3" id="s3">
+                <div class="slide-content">
+                    <h2>Poster Design Services</h2>
+                    <p>Business · Events · Promotions · Custom Designs</p>
+                    <a href="{% url 'poster_design' %}" class="btn btn-dark">
+                        Explore Designs
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- DOTS -->
+    <div class="slider-dots">
+        <a href="#s1"></a>
+        <a href="#s2"></a>
+        <a href="#s3"></a>
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- ================= FEATURED ================= -->
+<section class="featured-section">
+    <div class="section-header">
+        <h2>Featured Products</h2>
+        <p>Handpicked items from our collection</p>
+    </div>
+
+    <div class="featured-grid">
+        {% for product in products|slice:":4" %}
+        <div class="featured-card">
+            <div class="featured-image">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+
+            <div class="featured-info">
+                <h3>{{ product.name }}</h3>
+                <span class="price">₹{{ product.price }}</span>
+                <a href="{% url 'product_detail' product.id %}">View Details</a>
+            </div>
+        </div>
+        {% empty %}
+        <p class="empty-msg">Featured products coming soon.</p>
+        {% endfor %}
+    </div>
+</section>
+
+<!-- ================= VISIT STORE ================= -->
+<section class="visit-section">
+    <div class="visit-box">
+        <h2>Visit Our Store</h2>
+
+        <p>
+            Experience our products in person and explore custom designs
+            with our team for a truly personal touch.
+        </p>
+
+        <div class="visit-meta">
+            📍 Kerala, India &nbsp; | &nbsp; ⏰ 9:30 AM – 8:30 PM
+        </div>
+
+        <!-- MAP -->
+        <div class="visit-map">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d272.9888028469461!2d75.5041182258724!3d11.827820352888224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba4259d3559904b%3A0xcb7467fdcf0655c7!2sGoodwill%20gift%20house%20and%20design%20center!5e1!3m2!1sen!2sin!4v1770457172072!5m2!1sen!2sin"
+                width="100%"
+                height="320"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+        <a href="https://wa.me/918075564099"
+           target="_blank"
+           class="visit-btn">
+            Contact on WhatsApp
+        </a>
+    </div>
+</section>
+
+
+{% endblock %}

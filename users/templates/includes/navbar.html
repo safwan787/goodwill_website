@@ -1,0 +1,81 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg fixed-top bg-white border-bottom">
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+            <img src="{% static 'goodwill-logo only logo.png' %}" height="50" alt="Goodwill">
+            <span class="fw-bold">Goodwill Gift House</span>
+        </a>
+
+        <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+            <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-4">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'product_list' %}">Shop</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'offers' %}">Offers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'poster_design' %}">Design Services</a>
+                </li>
+
+
+                <!-- CART -->
+                <li class="nav-item position-relative">
+                    <a class="nav-link" href="{% url 'cart' %}">
+                        <i class="bi bi-bag"></i>
+                        Cart
+                        {% if request.session.cart %}
+                        <span class="cart-badge">
+                            {{ request.session.cart|length }}
+                        </span>
+                        {% endif %}
+                    </a>
+                </li>
+
+                {% if user.is_authenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle"
+                       href="#" role="button"
+                       data-bs-toggle="dropdown">
+                        Hi, {{ user.username }}
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li>
+                            <a class="dropdown-item" href="{% url 'dashboard' %}">
+                                My Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="{% url 'logout' %}">
+                                Logout
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <li class="nav-item">
+                    <a class="btn btn-dark btn-sm px-3" href="{% url 'login' %}">
+                        Login
+                    </a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+</nav>

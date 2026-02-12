@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block title %}My Enquiries | Goodwill Gift House{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-header">
+    <h1>My Enquiries</h1>
+    <p>Enquiries you have sent to us</p>
+</section>
+
+{% if enquiries %}
+<div class="enquiry-list">
+    {% for enquiry in enquiries %}
+    <div class="enquiry-card">
+        <h3>{{ enquiry.product.name }}</h3>
+
+        <p class="enquiry-message">
+            "{{ enquiry.message }}"
+        </p>
+
+        <span class="enquiry-date">
+            Sent on {{ enquiry.created_at|date:"d M Y, h:i A" }}
+        </span>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p class="text-muted">
+    You haven’t sent any enquiries yet.
+</p>
+{% endif %}
+
+<a href="{% url 'dashboard' %}" class="btn btn-outline-dark mt-4">
+    ← Back to Dashboard
+</a>
+
+{% endblock %}

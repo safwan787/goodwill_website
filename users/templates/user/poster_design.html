@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Poster Design Services | Goodwill Gift House{% endblock %}
+
+{% block content %}
+
+<section class="service-page container">
+
+    <!-- ================= HERO ================= -->
+    <div class="service-header text-center mb-5">
+        <h1>Professional Poster Design Services</h1>
+        <p class="lead">
+            Business · Events · Promotions · Custom Designs · Branding
+        </p>
+        <a href="#design-enquiry" class="btn btn-dark mt-3">
+            Start Your Design
+        </a>
+    </div>
+
+    <!-- ================= WHAT WE DESIGN ================= -->
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <h3>What We Design</h3>
+            <ul>
+                <li>✔ Business & shop posters</li>
+                <li>✔ Event & festival posters</li>
+                <li>✔ Promotional & marketing materials</li>
+                <li>✔ Custom branding designs</li>
+                <li>✔ Flex & print-ready formats</li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <h3>How It Works</h3>
+            <ol>
+                <li>Send your requirement</li>
+                <li>Upload reference files (optional)</li>
+                <li>We design & share preview</li>
+                <li>Final print-ready delivery</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- ================= PORTFOLIO SECTION ================= -->
+    <hr class="my-5">
+
+    <div class="text-center mb-4">
+        <h2>Our Previous Works</h2>
+        <p class="text-muted">
+            Some of the poster designs created by Goodwill Gift House & Design Center
+        </p>
+    </div>
+
+    <div class="design-gallery">
+        <div class="design-card">
+            <img src="{% static 'designs/poster1.jpg' %}" alt="Poster Design 1">
+            <div class="design-info">
+                <h6>Shop Promotion Poster</h6>
+                <p>Business promotional design</p>
+            </div>
+        </div>
+
+        <div class="design-card">
+            <img src="{% static 'designs/poster2.jpg' %}" alt="Poster Design 2">
+            <div class="design-info">
+                <h6>Event Announcement</h6>
+                <p>Festival & celebration poster</p>
+            </div>
+        </div>
+
+        <div class="design-card">
+            <img src="{% static 'designs/poster3.jpg' %}" alt="Poster Design 3">
+            <div class="design-info">
+                <h6>Marketing Campaign</h6>
+                <p>Brand awareness poster</p>
+            </div>
+        </div>
+
+        <div class="design-card">
+            <img src="{% static 'designs/poster4.jpg' %}" alt="Poster Design 4">
+            <div class="design-info">
+                <h6>Custom Flex Design</h6>
+                <p>Large format print</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= QUICK WHATSAPP ================= -->
+    <div class="text-center my-5">
+        <a href="https://wa.me/918075564099?text=Hi%20Goodwill%20Gift%20House%2C%20I%20need%20a%20poster%20design"
+           target="_blank"
+           class="btn btn-outline-dark">
+            💬 Discuss on WhatsApp
+        </a>
+    </div>
+
+    <!-- ================= DESIGN ENQUIRY ================= -->
+    <hr class="my-5">
+
+    <h3 id="design-enquiry" class="mb-4">Send Design Enquiry</h3>
+
+    <form method="post"
+          action="{% url 'design_inquiry' %}"
+          enctype="multipart/form-data"
+          id="design-form">
+
+        {% csrf_token %}
+
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <input type="text" name="name" class="form-control"
+                       placeholder="Your Name" required>
+            </div>
+            <div class="col-md-4">
+                <input type="email" name="email" class="form-control"
+                       placeholder="Your Email" required>
+            </div>
+            <div class="col-md-4">
+                <input type="text" name="phone" class="form-control"
+                       placeholder="Mobile Number" required>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <label><strong>Main Design Description *</strong></label>
+            <textarea name="message"
+                      class="form-control"
+                      rows="4"
+                      placeholder="Explain your full design requirement..."
+                      required></textarea>
+        </div>
+
+        <!-- ================= DRAG & DROP ================= -->
+        <div class="upload-section mb-4">
+            <div id="drop-zone" class="drop-zone">
+                <p>Drag & Drop files here or click to upload</p>
+                <small>Allowed: JPG, PNG, PDF • Multiple files supported</small>
+                <input type="file" name="files" id="file-input"
+                       multiple hidden>
+            </div>
+
+            <div id="preview-container" class="preview-container"></div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-dark px-5">
+                Submit Design Enquiry
+            </button>
+        </div>
+
+    </form>
+
+</section>
+
+<script>
+const dropZone = document.getElementById("drop-zone");
+const fileInput = document.getElementById("file-input");
+const previewContainer = document.getElementById("preview-container");
+
+dropZone.addEventListener("click", () => fileInput.click());
+
+dropZone.addEventListener("dragover", (e) => {
+    e.preventDefault();
+    dropZone.classList.add("dragover");
+});
+
+dropZone.addEventListener("dragleave", () => {
+    dropZone.classList.remove("dragover");
+});
+
+dropZone.addEventListener("drop", (e) => {
+    e.preventDefault();
+    dropZone.classList.remove("dragover");
+    fileInput.files = e.dataTransfer.files;
+    previewFiles(e.dataTransfer.files);
+});
+
+fileInput.addEventListener("change", () => {
+    previewFiles(fileInput.files);
+});
+
+function previewFiles(files) {
+    previewContainer.innerHTML = "";
+    [...files].forEach(file => {
+        const div = document.createElement("div");
+        div.classList.add("preview-item");
+        div.innerHTML = `<p>${file.name}</p>`;
+        previewContainer.appendChild(div);
+    });
+}
+</script>
+
+{% endblock %}

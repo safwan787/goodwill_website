@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block title %}Order Placed{% endblock %}
+
+{% block content %}
+<div class="text-center mt-5">
+    <h3>Order Placed Successfully 🎉</h3>
+    <p>Thank you for shopping with us.</p>
+
+    <a href="{{ whatsapp_url }}" target="_blank"
+       class="btn btn-success mt-3">
+        Notify Admin on WhatsApp
+    </a>
+
+    <br><br>
+
+    <a href="{% url 'product_list' %}" class="btn btn-outline-dark">
+        Continue Shopping
+    </a>
+</div>
+{% endblock %}

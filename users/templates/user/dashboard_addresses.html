@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}My Addresses | Goodwill Gift House{% endblock %}
+
+{% block content %}
+
+<section class="dashboard-header">
+    <h1>My Addresses</h1>
+    <p>Saved delivery addresses</p>
+</section>
+
+{% if addresses %}
+<div class="address-list">
+    {% for address in addresses %}
+    <div class="address-card">
+        <strong>{{ address.label }}</strong>
+        <p>
+            {{ address.address_line }}<br>
+            {{ address.city }}, {{ address.state }} - {{ address.pincode }}
+        </p>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<p class="text-muted">No addresses added yet.</p>
+{% endif %}
+
+<hr class="my-4">
+
+<h4>Add New Address</h4>
+
+<form method="post" class="address-form">
+    {% csrf_token %}
+    <input type="text" name="label" placeholder="Label (Home, Office)" required>
+    <textarea name="address_line" placeholder="Address line" required></textarea>
+    <input type="text" name="city" placeholder="City" required>
+    <input type="text" name="state" placeholder="State" required>
+    <input type="text" name="pincode" placeholder="Pincode" required>
+
+    <button type="submit" class="btn btn-dark mt-3">
+        Save Address
+    </button>
+</form>
+
+<a href="{% url 'dashboard' %}" class="btn btn-outline-dark mt-4">
+    ← Back to Dashboard
+</a>
+
+{% endblock %}

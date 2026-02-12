@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Inquiry | {{ product.name }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/inquiry.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="inquiry-page container">
+
+    <h2 class="mb-4">Product Inquiry</h2>
+
+    <div class="row">
+
+        <!-- PRODUCT SUMMARY -->
+        <div class="col-md-4 mb-4">
+            <div class="product-summary">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h5>{{ product.name }}</h5>
+                <p class="price">₹{{ product.price }}</p>
+            </div>
+        </div>
+
+        <!-- INQUIRY FORM -->
+        <div class="col-md-8">
+            <div class="inquiry-form">
+
+                <form method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label>Your Name</label>
+                            {{ form.name }}
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+                            <label>Email</label>
+                            {{ form.email }}
+                        </div>
+                    </div>
+
+                    <!-- ✅ NEW PHONE FIELD -->
+                    <div class="mb-3">
+                        <label>Mobile Number</label>
+                        {{ form.phone }}
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Message</label>
+                        {{ form.message }}
+                    </div>
+
+                    <!-- ✅ SIMPLE SINGLE FILE UPLOAD -->
+                    <div class="mb-4">
+                        <label>Upload Reference Image (Optional)</label>
+                        <input type="file"
+                               name="file"
+                               class="form-control"
+                               accept=".jpg,.jpeg,.png,.pdf">
+                        <small class="text-muted">
+                            Optional: JPG, PNG, PDF
+                        </small>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Send Inquiry
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}{{ product.name }} | Momento Store{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/product_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="product-detail-page">
+
+    <div class="row">
+
+        <!-- PRODUCT IMAGE -->
+        <div class="col-md-6">
+            <div class="product-image-box">
+                
+                {% if not product.available or product.stock == 0 %}
+                    <span class="badge badge-out">Out of Stock</span>
+                {% elif product.stock <= 5 %}
+                    <span class="badge badge-low">Limited Stock</span>
+                {% endif %}
+
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+            </div>
+        </div>
+
+        <!-- PRODUCT INFO -->
+        <div class="col-md-6">
+            <div class="product-info-box">
+
+                <h2>{{ product.name }}</h2>
+
+                <p class="price">
+                    ₹{{ product.price }}
+                </p>
+
+                <p class="description">
+                    {{ product.description }}
+                </p>
+
+                <!-- ACTION BUTTONS -->
+                <div class="action-buttons">
+
+                    {% if product.available and product.stock > 0 %}
+
+                        <!-- ✅ FIXED BUY NOW -->
+                        <a href="{% url 'buy_now' product.id %}" class="btn btn-dark">
+                           Buy Now
+                        </a>
+
+                        <a href="{% url 'inquiry_page' product.id %}"
+                           class="btn-primary">
+                            Send Inquiry
+                        </a>
+
+                        <a href="{% url 'add_to_cart' product.id %}"
+                           class="btn btn-outline-dark">
+                            Add to Cart
+                        </a>
+
+                    {% else %}
+                        <button class="btn-disabled" disabled>
+                            Out of Stock
+                        </button>
+                    {% endif %}
+
+                    <a href="{% url 'product_list' %}" class="btn-secondary">
+                        Back to Products
+                    </a>
+                </div>
+
+                <!-- STOCK MESSAGE -->
+                {% if product.stock > 0 and product.stock <= 5 %}
+                    <p class="stock-warning">
+                        Hurry! Only {{ product.stock }} left in stock.
+                    </p>
+                {% endif %}
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

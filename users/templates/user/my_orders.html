@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}My Orders{% endblock %}
+
+{% block content %}
+
+<h3>My Orders</h3>
+
+<form method="get" class="mb-4">
+    <input type="text" name="phone" placeholder="Enter your phone number"
+           value="{{ phone|default:'' }}" required>
+    <button type="submit" class="btn btn-dark">View Orders</button>
+</form>
+
+{% if orders %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Status</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>#{{ order.id }}</td>
+            <td>{{ order.status }}</td>
+            <td>{{ order.created_at|date:"d M Y" }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% elif phone %}
+<p>No orders found.</p>
+{% endif %}
+
+{% endblock %}

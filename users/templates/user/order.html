@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Order | {{ product.name }}{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/order.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<section class="order-page">
+
+    <h3>Place Your Order</h3>
+
+    <div class="row">
+
+        <!-- PRODUCT SUMMARY -->
+        <div class="col-md-4">
+            <div class="product-summary">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <h6>{{ product.name }}</h6>
+                <p class="price">₹{{ product.price }}</p>
+            </div>
+        </div>
+
+        <!-- ORDER FORM -->
+        <div class="col-md-8">
+            <div class="order-form">
+
+                <form method="post">
+                    {% csrf_token %}
+
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" name="customer_name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email (optional)</label>
+                        <input type="email" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address</label>
+                        <textarea name="address" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        Confirm Order
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
