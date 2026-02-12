@@ -29,7 +29,7 @@ SECRET_KEY = 'django-insecure-=ehl4_*mur@!8ce0uw11=lgbbw4zx46t!y+3km@ft4+4@n-*39
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['safwanweb.pythonanywhere.com']
 
 
 # Application definition
@@ -138,8 +138,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATIC_URL = '/static/'
-STATICFILES_STORAGE =
-'whitenoise.storage.CompressedManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
