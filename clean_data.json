@@ -1,0 +1,252 @@
+[
+{
+  "model": "store_admin.category",
+  "pk": 1,
+  "fields": {
+    "name": "Wood Momento",
+    "description": "Our Wood Memento collection is designed to turn your most cherished memories into tactile keepsakes. Each piece features natural grain patterns that make your gift truly one-of-a-kind. From engraved milestones to handcrafted tokens, these are more than just objectsùthey are stories carved in time, built to be passed down through generations.\"",
+    "slug": "wood-momento"
+  }
+},
+{
+  "model": "store_admin.category",
+  "pk": 2,
+  "fields": {
+    "name": "Glass Memento",
+    "description": "Capture success in its most brilliant form. Our Glass Memento collection embodies clarity and excellence, offering a sophisticated way to honor significant achievements. These pieces catch and refract light, creating a stunning centerpiece for any mantle or desk. When a moment is truly monumental, it deserves the timeless transparency and weight of premium glass",
+    "slug": "glass-memento"
+  }
+},
+{
+  "model": "store_admin.category",
+  "pk": 3,
+  "fields": {
+    "name": "Stationary",
+    "description": "\"Keep the art of connection alive. ThereÆs nothing quite like the feeling of receiving a handwritten note in the mail. Our collection of charming stationery makes it easy to stay in touch, celebrate milestones, or simply say hello. With playful designs and thoughtful details, we help you share a piece of your heart with the people who matter most.\"",
+    "slug": "stationary"
+  }
+},
+{
+  "model": "store_admin.category",
+  "pk": 4,
+  "fields": {
+    "name": "Multiwood momento",
+    "description": "\"Redefining the keepsake. Our Multiwood collection provides a crisp, clean canvas for your most creative designs. Unlike traditional timber, Multiwood offers a perfectly uniform texture, allowing for high-definition printing and deep-relief carving that never splinters or cracks. From vibrant color-printed awards to elegant white-base plaques, these mementos bring a fresh, contemporary edge to any celebration.\"",
+    "slug": "multiwood-momento"
+  }
+},
+{
+  "model": "store_admin.category",
+  "pk": 5,
+  "fields": {
+    "name": "acrylic memento",
+    "description": "\"Experience the perfect fusion of elegance and practicality with our versatile Acrylic Mementos. Known for their exceptional clarity and sleek, minimalist profile, these pieces are a favorite for modern recognition programs and commemorative gifts. The high-density material ensures a premium feel without the fragility of glass, allowing for intricate laser etching and edge-to-edge color printing. From classic geometric blocks to custom-cut shapes, our acrylic collection offers a professional, polished aesthetic that fits seamlessly into any environment, celebrating excellence with a clean and timeless look.\"",
+    "slug": "acrylic-memento"
+  }
+},
+{
+  "model": "store_admin.category",
+  "pk": 6,
+  "fields": {
+    "name": "Photo Frames",
+    "description": "\"Give your memories the home they deserve with our versatile range of Photo Frames. The perfect gift for any occasion, our frames are designed to complement any styleùfrom the classic elegance of a bedside table to the busy energy of a gallery wall. We combine durable construction with easy-to-use backing, making it simple to update your photos as your story grows. Whether youÆre looking for a bold statement piece or a delicate accent, our collection offers a variety of sizes and finishes to ensure your most important people and places are always on display. ItÆs not just a frame; itÆs a celebration of the moments that matter most.\"",
+    "slug": "photo-frames"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "The Victorian Heritage Memento (Model WM01)",
+    "description": "Elevate your recognition ceremonies with this exquisitely crafted memento. Designed for those who appreciate the intersection of traditional craftsmanship and sophisticated aesthetics, this piece serves as a timeless tribute to achievement and milestones.\r\n\r\nKey Features\r\nPremium Wood Finish: Features a deep mahogany-toned base and body with a polished, smooth texture that exudes authority and warmth.\r\n\r\nIntricate Filigree Detailing: The central circular display is encased in an ornate silver-finished frame, featuring delicate floral motifs and sapphire-blue accents for a touch of royal elegance.\r\n\r\nSubstantial Presence: Standing at a commanding height, this memento is designed to be the centerpiece of any office, gallery, or trophy cabinet.\r\n\r\nVersatile Customization: The broad circular center provides ample space for high-quality engraving, UV printing, or mounting custom metal plates.\r\nWhy YouÆll Love It\r\nThis isn't just an award; itÆs a piece of decor. The contrast between the rich red wood and the cool silver filigree ensures it captures the light and the attention of everyone in the room. It is the perfect choice for corporate excellence awards, retirement honors, or prestigious academic achievements.\r\nProduct Specifications\r\nHeight: 36 cm\r\nWidth: 26 cm\r\nMaterial: High-grade composite wood with metallic filigree overlay\r\n\r\nBase: Tiered rectangular pedestal for maximum stability",
+    "price": "1600.00",
+    "image": "products/WM01.png",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-08T15:51:00.164Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 2,
+  "fields": {
+    "category": 1,
+    "name": "The Golden Rose Excellence Plaque (Model WM 02-01)",
+    "description": "This rectangular plaque features a distinctive curved silhouette. The centerpiece is framed by a heavy, textured gold border with a floral \"rose\" pattern on the right and a sleek, modern wave design on the left, accented with blue crystals.\r\nThe highly detailed gold floral engraving gives this memento a tactile, luxurious feel that looks and weighs like a premium honor.\r\nHeight: 40 cm\r\nWidth: 28 cm\r\nGala event winners, leadership excellence recognition, or prestigious sports trophies.",
+    "price": "1200.00",
+    "image": "products/WM_02-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:00:12.674Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 3,
+  "fields": {
+    "category": 1,
+    "name": "The Regal Crown Desktop Award (Model WM 03-01)",
+    "description": "Perfect for intimate recognition or prestigious desktop displays, the Regal Crown Desktop Award combines compact elegance with regal detailing. This refined memento measures $18.5\\text{ cm}$ in height and $11\\text{ cm}$ in width, making it a sophisticated addition to any professional workspace or mantel. The arched mahogany-finished frame is crowned with a magnificent golden scrollwork crest, while the ivory-toned inner frame is detailed with delicate golden vines and corner accents. Despite its smaller footprint, its rich materials and ornate craftsmanship ensure it makes a lasting impression as a token of appreciation, academic excellence, or honorary membership.",
+    "price": "180.00",
+    "image": "products/WM_03-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:02:33.478Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 4,
+  "fields": {
+    "category": 1,
+    "name": "The Victory Shield Commemorative Trophy (Model WM 04-01)",
+    "description": "Celebrate excellence with the Victory Shield Commemorative Trophy, a dynamic and modern award designed to inspire. Standing 17.5 cm tall with a width of 10 cm, this trophy features a unique hourglass-inspired wooden silhouette in a rich mahogany finish, providing a sturdy and professional base for recognition. The centerpiece is a high-gloss golden shield accented with radiant sunburst patterns and a circular laurel wreath emblem at the top, symbolizing victory and honor. A large, rectangular golden plate offers generous space for custom engraving, while the surrounding black and gold arched accents add a contemporary flair that stands out on any display shelf. This striking piece is the perfect choice for sports achievements, academic honors, or corporate sales milestones where a bold and energetic design is required.",
+    "price": "70.00",
+    "image": "products/WM_04-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:05:08.565Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 5,
+  "fields": {
+    "category": 2,
+    "name": "The Prism Glass Excellence Award (Model GM 01-01)",
+    "description": "Elevate your recognition ceremonies with the Prism Glass Excellence Award, a sophisticated and minimalist piece crafted from premium, high-clarity glass. Measuring 16 cm in height and 7.8 cm in width, this award features a sleek, angular geometric silhouette that brilliantly captures and refracts light, providing a luminous and professional finish. The transparent glass body is set into a solid, tiered black base for a bold, modern contrast that ensures the award commands attention in any executive office or display case. Its pristine, expansive surface is specifically designed for high-precision laser engraving or elegant sandblasting, making it a timeless choice for honoring corporate leadership, exceptional innovation, or significant professional milestones.",
+    "price": "90.00",
+    "image": "products/GM_01-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:08:29.251Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 6,
+  "fields": {
+    "category": 4,
+    "name": "The Minimalist Archway Multiwood Plaque (Model MULTIWOOD 01-01)",
+    "description": "Embrace clean lines and modern simplicity with the Minimalist Archway Multiwood Plaque, a versatile award designed to suit any contemporary aesthetic. Measuring $16\\text{ cm}$ in height and $7.5\\text{ cm}$ in width, this pristine white memento is crafted from high-quality multiwood, offering a smooth, matte finish that is both durable and lightweight. Its distinctive arched silhouette, reminiscent of classic architectural forms, provides a sophisticated backdrop for vibrant UV printing or custom colorful designs. The solid, matching white base ensures stability while maintaining the piece's seamless, monochromatic look. Perfect for creative milestones, religious commemorations, or modern corporate recognition, this plaque offers a fresh, bright alternative to traditional awards that effortlessly complements any professional or personal display.",
+    "price": "130.00",
+    "image": "products/MULTIWOOD_01-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:10:31.100Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 7,
+  "fields": {
+    "category": 4,
+    "name": "The Contemporary Abstract Multiwood Award (Model MULTIWOOD 02-01)",
+    "description": "Discover the perfect blend of modern artistry and professional recognition with the Contemporary Abstract Multiwood Award, a standout piece designed for forward-thinking organizations. Standing $22\\text{ cm}$ high with a width of $14.5\\text{ cm}$, this memento is crafted from premium white multiwood, featuring a smooth, matte surface that is ideal for vibrant full-color UV printing or sleek custom engravings. Its unique, asymmetrical silhouetteùcombining sharp geometric angles with a soft, rounded circular topùsymbolizes innovation, creativity, and the balance of diverse ideas. Supported by a solid, matching white rectangular base for maximum stability, this plaque serves as a fresh, sophisticated alternative to traditional trophies, making it an exceptional choice for design awards, creative achievement honors, or modern corporate milestones.",
+    "price": "130.00",
+    "image": "products/MULTIWOOD_02-01.jpg.jpeg",
+    "stock": 0,
+    "available": true,
+    "created_at": "2026-02-09T16:12:24.020Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 8,
+  "fields": {
+    "category": 5,
+    "name": "The Archway Acrylic Distinction Memento (Model ACRLYCMOM 01-01)",
+    "description": "Elevate your recognition ceremonies with the Archway Acrylic Distinction Memento, a perfect fusion of modern clarity and bold design. This premium award stands 20 cm in height and 9 cm in width, featuring a high-grade, crystal-clear acrylic plaque with a graceful arched top that beautifully catches and reflects ambient light. A striking, vibrant red swoosh accent flows along the left edge, adding a dynamic sense of movement and energy to the piece. Anchored by a sturdy, polished black oval base, this memento offers a sophisticated contrast that ensures it remains a standout centerpiece on any desk or display shelf. Its expansive, transparent surface is the ideal canvas for high-definition UV printing or precision laser engraving, making it an exceptional choice for honoring corporate milestones, athletic achievements, or personal triumphs with a professional and contemporary flair.",
+    "price": "150.00",
+    "image": "products/ACRLYCMOM_01-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:15:51.645Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 9,
+  "fields": {
+    "category": 5,
+    "name": "The Scarlet Shield Acrylic Memento (Model ACRLYCMOM 02-01)",
+    "description": "Make a bold statement with the Scarlet Shield Acrylic Memento, a contemporary award designed to recognize high-impact achievements and vibrant leadership. Standing 16.2 cm in height and 8 cm in width, this memento features a crystal-clear acrylic plaque with a unique concave top and tapered sides, creating a sharp, shield-like silhouette that exudes strength. The centerpiece is defined by a vivid red solid-color inlay, providing a high-contrast background that makes any custom text or logo pop with professional intensity. Mounted on a tiered, high-gloss black base for maximum stability and a polished look, this award is the perfect fusion of modern materials and classic prestige. Ideal for sales excellence, spirited competition winners, or standout organizational contributions, its sleek finish and energetic color palette ensure it becomes a treasured highlight of any professional collection.",
+    "price": "80.00",
+    "image": "products/ACRLYCMOM_02-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:17:21.775Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 10,
+  "fields": {
+    "category": 3,
+    "name": "Nataraj 621 Bold HB Writing Pencils (Pack of 10)",
+    "description": "Experience the legacy of IndiaÆs most iconic stationery with the Nataraj 621 Bold HB Writing Pencils, a household staple trusted by generations of students and professionals. This standard pack contains 10 high-quality graphite pencils, accompanied by a free sharpener and a neat-erasing \"Plasto\" eraser, providing a complete writing kit in one box. Known for its signature red and black striped design, the 621 model features a specially formulated \"Bonded Lead\" that is break-resistant and delivers smooth, dark, and bold lines without requiring excessive pressure. Crafted from superior wood that is easy to sharpen and comfortable to hold, these pencils are the quintessential choice for school exams, office documentation, and creative sketching. As a product of Hindustan PencilsùIndia's largest pencil manufacturerùthe Nataraj 621 combines legendary durability with affordable quality, ensuring your thoughts flow effortlessly onto paper every time.",
+    "price": "50.00",
+    "image": "products/Nataraj_621_Bold_HB_Writing_Pencils.png",
+    "stock": 5,
+    "available": true,
+    "created_at": "2026-02-09T16:24:17.172Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 11,
+  "fields": {
+    "category": 3,
+    "name": "Camel Student Poster Colours (Pack of 6)",
+    "description": "Ignite your artistic journey with Camel Student Poster Colours, a legendary staple in Indian art education celebrated for its rich pigments and reliable quality. This specific set features 6 essential, bold, and opaque shadesùLemon Yellow, Poster Green, Poster White, Cobalt Blue, Poster Black, and Poster Redùall contained in newly designed, lightweight, and unbreakable 10ml plastic bottles. These spill-proof bottles are specifically engineered for safe use by students and children, ensuring a mess-free experience while maintaining the paint's smooth, blendable texture. The quick-drying, non-toxic formula is CE certified and 100% vegan, making it safe for young artists to explore their creativity on various surfaces like drawing paper and art boards. Included in this attractive transparent pack is a free 6-well color mixing palette, allowing users to easily blend and create an infinite array of secondary hues for school projects, posters, or hobby crafts.",
+    "price": "150.00",
+    "image": "products/Camel_Student_Poster_Colours_Pack_of_6.png",
+    "stock": 3,
+    "available": true,
+    "created_at": "2026-02-09T16:26:07.914Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 12,
+  "fields": {
+    "category": 6,
+    "name": "10\" x 8\" Gallery Frame",
+    "description": "with print (350/- only)\r\nPreserve your most cherished moments in the Goodwill 10\" x 8\" Gallery Frame, a perfect blend of modern minimalism and timeless elegance. Measuring $25.4\\text{ cm} \\times 20.32\\text{ cm}$, this frame is specifically designed to showcase standard portrait photography and family snapshots with professional clarity. The substantial $1.9\\text{ cm}$ profile depth creates a stunning shadow-box effect, adding a sense of luxury and architectural interest to any display. Featuring a crisp matte white finish and a built-in wide border for a sophisticated matted look, this frame ensures your favorite memories stand out, whether placed on a tabletop or integrated into a custom gallery wall.",
+    "price": "300.00",
+    "image": "products/FRAME_01-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:39:09.490Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 13,
+  "fields": {
+    "category": 6,
+    "name": "A4 Gallery Frame",
+    "description": "with print (390/- only)\r\nElevate your professional achievements and artistic prints with the Goodwill A4 Gallery Frame. Measuring exactly $29.7\\text{ cm} \\times 21\\text{ cm}$, this frame is precision-engineered to house diplomas, certificates, and standard A4 artwork with a perfect fit. The frame features a sleek white finish and a substantial $1.9\\text{ cm}$ profile depth, creating a sophisticated shadow-box effect that adds a premium, architectural feel to your wall or desk. Designed for those who value clean lines and modern aesthetics, its integrated wide-border look provides a professional, matted appearance that ensures your most important documents and memories take center stage.",
+    "price": "340.00",
+    "image": "products/FRAME_02-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:42:09.381Z"
+  }
+},
+{
+  "model": "store_admin.product",
+  "pk": 14,
+  "fields": {
+    "category": 6,
+    "name": "8\" x 6\" Gallery Frame",
+    "description": "with print(230/- only)\r\nPreserve your favorite snapshots with the Goodwill 8\" x 6\" Gallery Frame, a sophisticated choice for compact yet impactful displays. Measuring $20\\text{ cm} \\times 15\\text{ cm}$ with a substantial $1.9\\text{ cm}$ profile depth, this frame features a rich, dual-tone finish that adds a touch of classic elegance to any tabletop or wall. Its architectural shadow-box design and integrated wide border provide a professional, matted look that draws focus to your image with stunning clarity. Get this frame complete with a high-quality custom print for only 230/-, making it the perfect affordable gift or personal keepsake for your home or office.",
+    "price": "200.00",
+    "image": "products/FRAME_03-01.jpg.jpeg",
+    "stock": 1,
+    "available": true,
+    "created_at": "2026-02-09T16:45:36.667Z"
+  }
+}
+]

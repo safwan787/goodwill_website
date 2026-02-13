@@ -1,0 +1,32 @@
+[
+{"model":"store_admin.category","pk":1,"fields":{"name":"Wood Momento","description":"Our Wood Memento collection is designed to turn your most cherished memories into tactile keepsakes. Each piece features natural grain patterns that make your gift truly one-of-a-kind. From engraved milestones to handcrafted tokens, these are more than just objects—they are stories carved in time, built to be passed down through generations.","slug":"wood-momento"}},
+{"model":"store_admin.category","pk":2,"fields":{"name":"Glass Memento","description":"Capture success in its most brilliant form. Our Glass Memento collection embodies clarity and excellence, offering a sophisticated way to honor significant achievements. These pieces catch and refract light, creating a stunning centerpiece for any mantle or desk.","slug":"glass-memento"}},
+{"model":"store_admin.category","pk":3,"fields":{"name":"Stationary","description":"Keep the art of connection alive with charming stationery that makes every message meaningful.","slug":"stationary"}},
+{"model":"store_admin.category","pk":4,"fields":{"name":"Multiwood momento","description":"A crisp, modern keepsake collection built for vibrant printing and deep carving without splinters or cracks.","slug":"multiwood-momento"}},
+{"model":"store_admin.category","pk":5,"fields":{"name":"acrylic memento","description":"Premium acrylic mementos with modern elegance and crystal-clear clarity.","slug":"acrylic-memento"}},
+{"model":"store_admin.category","pk":6,"fields":{"name":"Photo Frames","description":"Elegant photo frames designed to celebrate the moments that matter most.","slug":"photo-frames"}},
+
+{"model":"store_admin.product","pk":1,"fields":{"category":1,"name":"The Victorian Heritage Memento (Model WM01)","description":"Premium wood memento with ornate detailing.","price":"1600.00","image":"products/WM01.png","stock":1,"available":true}},
+{"model":"store_admin.product","pk":2,"fields":{"category":1,"name":"The Golden Rose Excellence Plaque (Model WM 02-01)","description":"Gold floral plaque with crystal accents.","price":"1200.00","image":"products/WM_02-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":3,"fields":{"category":1,"name":"The Regal Crown Desktop Award (Model WM 03-01)","description":"Compact desktop award with regal detailing.","price":"180.00","image":"products/WM_03-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":4,"fields":{"category":1,"name":"The Victory Shield Commemorative Trophy (Model WM 04-01)","description":"Modern trophy with golden shield design.","price":"70.00","image":"products/WM_04-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":5,"fields":{"category":2,"name":"The Prism Glass Excellence Award (Model GM 01-01)","description":"Premium clear glass award.","price":"90.00","image":"products/GM_01-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":6,"fields":{"category":4,"name":"The Minimalist Archway Multiwood Plaque (Model MULTIWOOD 01-01)","description":"Clean white multiwood plaque.","price":"130.00","image":"products/MULTIWOOD_01-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":7,"fields":{"category":4,"name":"The Contemporary Abstract Multiwood Award (Model MULTIWOOD 02-01)","description":"Abstract geometric multiwood award.","price":"130.00","image":"products/MULTIWOOD_02-01.jpg.jpeg","stock":0,"available":true}},
+{"model":"store_admin.product","pk":8,"fields":{"category":5,"name":"The Archway Acrylic Distinction Memento (Model ACRLYCMOM 01-01)","description":"Crystal-clear acrylic award.","price":"150.00","image":"products/ACRLYCMOM_01-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":9,"fields":{"category":5,"name":"The Scarlet Shield Acrylic Memento (Model ACRLYCMOM 02-01)","description":"Modern red-accent acrylic memento.","price":"80.00","image":"products/ACRLYCMOM_02-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":10,"fields":{"category":3,"name":"Nataraj 621 Bold HB Writing Pencils (Pack of 10)","description":"Classic HB pencils with sharpener and eraser.","price":"50.00","image":"products/Nataraj_621_Bold_HB_Writing_Pencils.png","stock":5,"available":true}},
+{"model":"store_admin.product","pk":11,"fields":{"category":3,"name":"Camel Student Poster Colours (Pack of 6)","description":"Student poster colour set.","price":"150.00","image":"products/Camel_Student_Poster_Colours_Pack_of_6.png","stock":3,"available":true}},
+{"model":"store_admin.product","pk":12,"fields":{"category":6,"name":"10 x 8 Gallery Frame","description":"Premium gallery frame.","price":"300.00","image":"products/FRAME_01-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":13,"fields":{"category":6,"name":"A4 Gallery Frame","description":"Professional A4 frame.","price":"340.00","image":"products/FRAME_02-01.jpg.jpeg","stock":1,"available":true}},
+{"model":"store_admin.product","pk":14,"fields":{"category":6,"name":"8 x 6 Gallery Frame","description":"Compact gallery frame.","price":"200.00","image":"products/FRAME_03-01.jpg.jpeg","stock":1,"available":true}},
+
+{"model":"store_admin.inquiry","pk":1,"fields":{"product":2,"name":"muhammed safwan k","email":"muhammedsafwan5622@gmail.com","phone":"","message":"i want 3 of this","status":"new"}},
+{"model":"store_admin.inquiry","pk":2,"fields":{"product":2,"name":"muhammed safwan k","email":"muhammedsafwan5622@gmail.com","phone":"","message":"i want 3 of this","status":"new"}},
+
+{"model":"store_admin.order","pk":1,"fields":{"customer_name":"muhammed safwan","phone":"8943468652","email":"muhammedsafwan652@okicici","address":"kannur, kerala","status":"confirmed"}},
+{"model":"store_admin.order","pk":2,"fields":{"customer_name":"safwan","phone":"","email":"muhammedsafwan5622@gmail.com","address":"kannur, kerala","status":"pending"}},
+
+{"model":"store_admin.orderitem","pk":1,"fields":{"order":1,"product":7,"quantity":1,"price":"130.00"}},
+{"model":"store_admin.orderitem","pk":2,"fields":{"order":2,"product":13,"quantity":1,"price":"340.00"}}
+]
